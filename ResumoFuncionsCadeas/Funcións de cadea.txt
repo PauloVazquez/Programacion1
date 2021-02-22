@@ -76,7 +76,7 @@ Función -> Resultado
 				Character.forDigit(3,10); -> '3'
 				Character.forDigit(12,16); -> 'c'
 			
-6.3 Clase "String"
+6.3 Clase Cadea
 
 	6.3.1 Inicialización de cadeas
 	
@@ -96,34 +96,70 @@ Función -> Resultado
 				
 		Igualdade:
 		
-			boolean String.equals(String)
-				"Hola mundo".equals("Hola mundo"); -> True
-				"Hola mundo".equals("Hola MUNDO"); -> False
+			boolean Cadea.equals(String)
+				"Hola mundo".equals("Ola mundo"); -> True
+				"Hola mundo".equals("Ola MUNDO"); -> False
 			
-			boolean String.equalsIgnoreCase(String)
-				"Hola mundo".equalsIgnoreCase("Hola mundo"); -> True
-				"Hola mundo".equalsIgnoreCase("Hola MUNDO"); -> True
+			boolean Cadea.equalsIgnoreCase(String)
+				"Hola mundo".equalsIgnoreCase("Ola mundo"); -> True
+				"Hola mundo".equalsIgnoreCase("Ola MUNDO"); -> True
 				
-			boolean String.regionMatches(int inicio, String comparación, int inicioString, int tamaño)
-					"Hola Mundo".regionMatches(0, "Mundo Hola", 6, 4); -> True
-					"Hola Mundo".regionMatches(0, "Mundo hola", 6, 4); -> False
+			boolean Cadea.regionMatches(int inicio, String comparación, int inicioString, int tamaño)
+				"Hola Mundo".regionMatches(0, "Mundo Ola", 6, 4); -> True
+				"Hola Mundo".regionMatches(0, "Mundo ola", 6, 4); -> False
 			
-			boolean String.regionMatches(boolean, int inicio, String comparación, int inicioString, int tamaño)
-			"Hola Mundo".regionMatches(true, 0, "Mundo Hola", 6, 4); -> True
-			"Hola Mundo".regionMatches(true, 0, "Mundo hola", 6, 4); -> True
-		
+			boolean Cadea.regionMatches(boolean, int inicio, String comparación, int inicioString, int tamaño)
+				"Hola Mundo".regionMatches(true, 0, "Mundo Ola", 6, 4); -> True
+				"Hola Mundo".regionMatches(true, 0, "Mundo ola", 6, 4); -> True
+			
 		Comparación alfabética:
 		
-			int compareTo(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
+			int Cadea.compareTo(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
 				"Mundo".compareTo("mundo"); -> -32
 				"Mundo".compareTo("Aire"); -> 12
 				"Aire".compareTo("Torre"); -> -19
 				
-			int compareToIgnoreCase(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
+			int Cadea.compareToIgnoreCase(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
 				"Mundo".compareToIgnoreCase("mundo"); -> 0
 				"Mundo".compareToIgnoreCase("Aire"); -> 12
 				"Aire".compareToIgnoreCase("Torre"); -> -19
 				
 	6.3.3 Concatenación
+		
+				"Miguel" + " " + "de Cervantes" + " " + "Saavedra; -> "Miguel de Cervantes Saavedra"
+				"Resultado: " + 3; -> "Resultado: 3" -> Equivalente a "Resultado: " + String.valueOf(3)
+				"Resultado: " + true; -> "Resultado: true" -> Equivalente a "Resultado: " + String.valueOf(true)
+				"Resultado: " + a; -> "Resultado: a" -> Equivalente a "Resultado: " + String.valueOf('a')
+			
+			String Cadea.concat(String)
+				"Miguel".concat(" De Cervantes Saavedra"); -> "Miguel de Cervantes Saavedra"
+				
+	6.3.4 Obtención de caracteres
 	
+		Obtención un caracter:
+		
+			char Cadea.charAt(int)
+				"Mundo".charAt(2); -> 'n'
+				"Mundo".charAt(10); -> Erro!
+		
+		Obtención dunha subcadea:
+		
+			String Cadea.substring(Int inicio)
+				"Ola mundo".substring(1); -> "la mundo"
+			
+			String .Cadeasubstring(Int inicio, Int fin)
+				"Ola mundo".substring(1, 6); -> "la m"
+				
+			String Cadea.trim()
+				"    Hola mundo    ".trim() -> "Hola mundo"
+				
+	6.3.5 Lonxitude dunha cadea
+	
+			int Cadea.length()
+				"Ola mundo".length() -> 9
+				"".length() -> 0
+				
+	6.3.6 Búsqueda
+	
+			int Cadea.indexOf()
 			
