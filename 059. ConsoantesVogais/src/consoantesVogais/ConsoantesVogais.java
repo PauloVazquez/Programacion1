@@ -23,7 +23,6 @@ public class ConsoantesVogais {
 				textoLimpo = textoLimpo + texto.charAt(i);				
 			}
 		}
-		
 		System.out.println("\nA cadea introducida é: "+textoLimpo);
 		return textoLimpo;
 	}
@@ -61,22 +60,22 @@ public class ConsoantesVogais {
 		
 		// Enchemos os vectores con baleiros
 		for (int i = 0; i < vogais.length; i++) {
-			vogais[i] = ' ';
+			vogais[i] = '*';
 		}
 		for (int i = 0; i < consoantes.length; i++) {
-			consoantes[i] = ' ';
+			consoantes[i] = '*';
 		}
 		
 		for (int i = 0; i < texto.length(); i++) { //  Percorremos o texto
 			if (texto.charAt(i) == 'a' || texto.charAt(i) == 'e' || texto.charAt(i) == 'i' || texto.charAt(i) == 'o' || texto.charAt(i) == 'u') {
 				int j = 0;
-				while(vogais[j] != texto.charAt(i) && vogais[j] != ' ') { // Mentres o carácter sexa diferente á posición do vector e esta sexa diferente de 0 avanzamos
+				while(vogais[j] != texto.charAt(i) && vogais[j] != '*') { // Mentres o carácter sexa diferente á posición do vector e esta sexa diferente de * avanzamos
 				j++;
 				}
 				vogais[j] = texto.charAt(i); // Cando sexa igual ou atope un espazo, ubica a letra				
 			} else {
 				int j = 0;
-				while(consoantes[j] != texto.charAt(i) && consoantes[j] != ' ') {
+				while(consoantes[j] != texto.charAt(i) && consoantes[j] != '*') {
 					j++;
 				}
 				consoantes[j] = texto.charAt(i);
@@ -84,33 +83,29 @@ public class ConsoantesVogais {
 		}
 		System.out.println();
 		System.out.println("Vogais:");
-		for (int i = 0; i < vogais.length; i++) {
+		int i = 0;
+		while(vogais[i] != '*' && i < vogais.length) {
 			System.out.print(vogais[i]);
+			i++;
 		}
+		i = 0;
+		
 		System.out.println("\n");
 		System.out.println("Consoantes:");
-		for (int i = 0; i < consoantes.length; i++) {
+		while(consoantes[i] != '*' && i < consoantes.length) {
 			System.out.print(consoantes[i]);
-		}
-
-			
+			i++;
+		}	
 	}
 	
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		
 		String textoCompleto ="", textoLimpo ="";
-		
 		textoCompleto = introducirTexto(teclado); 
-		
 		System.out.print("Teclee unha cadea: ");
-
 		textoLimpo = limparTexto(textoCompleto); // Eliminamos díxitos e caracteres especiais
 		textoLimpo = textoLimpo.toLowerCase();
-	
 		textoLimpo = limparVogais(textoLimpo); // Pasamos as vogais acentuadas a vogais normais
-		
 		detectarTipoLetras(textoLimpo); // Ubicamos a letra no seu correspondente vector
-	
 	}
 }
