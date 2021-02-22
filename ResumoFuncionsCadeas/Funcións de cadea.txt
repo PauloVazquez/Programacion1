@@ -1,27 +1,106 @@
-Clasificación de caracteres
-	Por tipos de caracter
+Función -> Resultado
 
-		boolean isDigit(char).
-		boolean isLetter(char).
-		boolean isLetterOrDigit(char).
-	
-	Por maiúsculas ou minúsculas		
-		boolean isLowerCase(char).
-		boolean isUpperCase(char).
-	
-	Por tipo de caracter branco
-		boolean isSpaceChar(char).
-		boolean isWhitespace(char).	
-		
-Conversión
-	Conversión entre caracteres
-		char toLowerCase(char)
-		char toUpperCase(char)
-	
-	Conversión de caracter a outro tipo
-		int digit(char, int base)
-		String toString(char)
+6.2 Clase 'Character'
 
-	Conversión doutro tipo a caracter
-		char forDigit(int, int base)
+	6.2.1 Clasificación de caracteres
+	
+		Por tipos de caracter:
 		
+			boolean isDigit(char)
+				Character.isDigit('8') -> True
+				Character.isDigit('p'); -> False
+				Character.isDigit('?'); -> False
+				
+			boolean isLetter(char)
+				Character.isLetter('8'); -> False
+				Character.isLetter('p'); -> True
+				Character.isDigit('?'); -> False
+			
+			boolean isLetterOrDigit(char)
+				Character.isLetterOrDigit('8'); -> True
+				Character.isLetterOrDigit('p'); -> True
+				Character.isLetterOrDigit('?'); -> False
+		
+		Por maiúsculas ou minúsculas		
+			boolean isLowerCase(char)
+				Character.isLowerCase('p'); -> True
+				Character.isLowerCase('P'); -> False
+				Character.isLowerCase('8'); -> False
+			
+			boolean isUpperCase(char)
+				Character.isUpperCase('p'); -> False
+				Character.isUpperCase('P'); -> True
+				Character.isUpperCase('8'); -> False
+		
+		Por tipo de caracter branco:
+		
+			boolean isSpaceChar(char)
+				Character.isSpaceChar(' '); -> True
+				Character.isSpaceChar('\n'); -> False
+				Character.isSpaceChar('\t'); -> False
+						
+			boolean isWhitespace(char)
+				Character.isWhitespace(' '); -> True
+				Character.isWhitespace('\n'); -> True
+				Character.isWhitespace('\t'); -> True
+				Character.isWhitespace('p'); -> False
+					
+	6.2.2 Conversión
+	
+		Conversión entre caracteres:
+		
+			char toLowerCase(char)
+				Character.toLowerCase('A'); -> 'a'
+				Character.toLowerCase('a'); -> 'a'
+				Character.toLowerCase('8'); -> '8'
+				
+			char toUpperCase(char)
+				Character.toUpperCase('a'); -> 'A'
+				Character.toUpperCase('A'); -> 'A'
+				Character.toUpperCase('8'); -> '8'
+		
+		Conversión de caracter a outro tipo:
+		
+			int digit(char, int base)
+				Character.digit('3',10); -> 3
+				Character.digit('c',16); -> 12
+				
+			String toString(char)
+				Character.toString('b'); -> "b"
+				Character.toString('8'); -> "8"
+				Character.toString('b') + Character.toString('8') -> "b8"
+
+		Conversión doutro tipo a caracter:
+		
+			char forDigit(int, int base)	
+				Character.forDigit(3,10); -> '3'
+				Character.forDigit(12,16); -> 'c'
+			
+6.3 Clase "String"
+
+	6.3.1 Inicialización de cadeas
+	
+		Literal cadea:
+		
+			cadea = new String("Literal cadea") ou cadea = "Literal cadea"
+		
+		Valores doutro tipo:
+		
+			static String valueOf()
+				String.valueOf(1234); -> "1234"
+				String.valueOf(-12.34); -> "-12.34"
+				String.valueOf('C'); -> "C"
+				String.valueOf(false) -> "false"
+				
+	6.3.2 Comparación
+				
+		Igualdade:
+		
+			boolean equals(String)
+				"Hola mundo".equals("Hola mundo"); -> True
+				"Hola mundo".equals("Hola MUNDO"); -> False
+			
+			boolean equalsIgnoreCase(String)
+				"Hola mundo".equalsIgnoreCase("Hola mundo"); -> True
+				"Hola mundo".equalsIgnoreCase("Hola MUNDO"); -> True
+			
