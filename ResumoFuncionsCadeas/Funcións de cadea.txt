@@ -96,11 +96,34 @@ Función -> Resultado
 				
 		Igualdade:
 		
-			boolean equals(String)
+			boolean String.equals(String)
 				"Hola mundo".equals("Hola mundo"); -> True
 				"Hola mundo".equals("Hola MUNDO"); -> False
 			
-			boolean equalsIgnoreCase(String)
+			boolean String.equalsIgnoreCase(String)
 				"Hola mundo".equalsIgnoreCase("Hola mundo"); -> True
 				"Hola mundo".equalsIgnoreCase("Hola MUNDO"); -> True
+				
+			boolean String.regionMatches(int inicio, String comparación, int inicioString, int tamaño)
+					"Hola Mundo".regionMatches(0, "Mundo Hola", 6, 4); -> True
+					"Hola Mundo".regionMatches(0, "Mundo hola", 6, 4); -> False
+			
+			boolean String.regionMatches(boolean, int inicio, String comparación, int inicioString, int tamaño)
+			"Hola Mundo".regionMatches(true, 0, "Mundo Hola", 6, 4); -> True
+			"Hola Mundo".regionMatches(true, 0, "Mundo hola", 6, 4); -> True
+		
+		Comparación alfabética:
+		
+			int compareTo(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
+				"Mundo".compareTo("mundo"); -> -32
+				"Mundo".compareTo("Aire"); -> 12
+				"Aire".compareTo("Torre"); -> -19
+				
+			int compareToIgnoreCase(String) // Positivo, despois alfabeticamente. Negativo, antes alfabeticamente.
+				"Mundo".compareToIgnoreCase("mundo"); -> 0
+				"Mundo".compareToIgnoreCase("Aire"); -> 12
+				"Aire".compareToIgnoreCase("Torre"); -> -19
+				
+	6.3.3 Concatenación
+	
 			
