@@ -1,0 +1,27 @@
+Clasificación de caracteres
+	Por tipos de caracter
+
+		boolean isDigit(char).
+		boolean isLetter(char).
+		boolean isLetterOrDigit(char).
+	
+	Por maiúsculas ou minúsculas		
+		boolean isLowerCase(char).
+		boolean isUpperCase(char).
+	
+	Por tipo de caracter branco
+		boolean isSpaceChar(char).
+		boolean isWhitespace(char).	
+		
+Conversión
+	Conversión entre caracteres
+		char toLowerCase(char)
+		char toUpperCase(char)
+	
+	Conversión de caracter a outro tipo
+		int digit(char, int base)
+		String toString(char)
+
+	Conversión doutro tipo a caracter
+		char forDigit(int, int base)
+		
